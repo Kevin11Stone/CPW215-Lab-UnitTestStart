@@ -15,7 +15,7 @@ namespace BusinessLogic
             
             if (int.TryParse(newSsn, out int s))
             {
-                if (ssn.Trim().ToString().Length == 9)
+                if (newSsn.ToString().Length == 9)
                 {
                     return true;
                 }
