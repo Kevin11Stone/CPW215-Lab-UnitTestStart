@@ -6,8 +6,7 @@ namespace BusinessLogic
 {
     public class Course
     {
-
-
+        private byte _numberOfCredits;
 
         public Course(string courseName)
         {
@@ -19,7 +18,7 @@ namespace BusinessLogic
         /// The instructor teaching the course in question
         /// </summary>
         public string InstructorName { get; set; }
-        
+
 
 
         /// <summary>
@@ -30,7 +29,22 @@ namespace BusinessLogic
         /// <summary>
         /// Number of credits for the course
         /// </summary>
-        public byte NumberOfCredits { get; set; }
+        public byte NumberOfCredits 
+        {
+            get
+            {
+                return _numberOfCredits;
+            }
+            set
+            {
+                if ( value >= 30 || value <= 0 )
+                {
+                    throw new ArgumentException("Number of credits must be " +
+                        "between 0 and 30 inclusive.");
+                }
+                _numberOfCredits = value;
+            }
+        }
 
     }
 }
