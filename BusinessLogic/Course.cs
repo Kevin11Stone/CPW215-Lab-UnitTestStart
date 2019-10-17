@@ -6,15 +6,21 @@ namespace BusinessLogic
 {
     public class Course
     {
+
+
+
         public Course(string courseName)
         {
             CourseName = courseName;
+            InstructorName = "STAFF";
         }
 
         /// <summary>
-        /// The instructor teaching the course
+        /// The instructor teaching the course in question
         /// </summary>
         public string InstructorName { get; set; }
+        
+
 
         /// <summary>
         /// The name of the course
